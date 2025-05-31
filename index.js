@@ -32,6 +32,9 @@ const db = admin.firestore();
 
 app.post('/create-checkout-session', async (req, res) => {
   const { priceId, successUrl, cancelUrl, firestoreDocId } = req.body;
+
+
+  console.log(priceId)
   if (!priceId || !successUrl || !cancelUrl || !firestoreDocId)
     return res.status(400).json({ error: 'Missing parameters' });
 
